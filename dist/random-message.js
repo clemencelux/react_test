@@ -5,12 +5,14 @@ var RandomMessage = React.createClass({
 
 
   getInitialState: function getInitialState() {
-    return { message: 'whatsup' };
+    return { message: '' };
   },
 
   onClick: function onClick() {
-    var messages = ['test1', 'test2', 'test3'];
-    var randomMessage = messages[Math.floor(Math.random() * 3)];
+
+    var messages = ['Dark', 'Defensive', 'Delusional', 'Demented', 'Depressed', 'Determined', 'Devious', 'Dirty', 'Disappointed', 'Discontent', 'Ditzy', 'Dorky', 'Drained', 'Drunk'];
+
+    var randomMessage = messages[Math.floor(Math.random() * 14)];
 
     this.setState({ message: randomMessage });
   },
@@ -23,7 +25,7 @@ var RandomMessage = React.createClass({
       React.createElement(
         'p',
         null,
-        React.createElement('input', { type: 'button', onClick: this.onClick, value: 'choose ur mood' })
+        React.createElement('input', { className: 'btn btn-default btn-lg btn-block', type: 'button', onClick: this.onClick, value: 'choose ur mood' })
       )
     );
   }
@@ -34,7 +36,7 @@ var MessageView = React.createClass({
 
   render: function render() {
     return React.createElement(
-      'p',
+      'h6',
       null,
       this.props.message,
       ' '
