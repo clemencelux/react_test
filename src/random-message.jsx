@@ -23,7 +23,7 @@ var RandomMessage= React.createClass({
     return (
       <div>
       <MessageView message={this.state.message} />
-      <p><input className="btn btn-default btn-lg btn-block" type="button" onClick={this.onClick} value="choose ur mood" /></p>
+      <p><input  type="button" onClick={this.onClick} value="choose ur mood" /></p>
       </div>
     );
   }
@@ -40,5 +40,5 @@ var MessageView = React.createClass({
 
 ReactDOM.render(
   <RandomMessage />,
-  document.getElementById('greeting-div')
+  document.getElementById('mood')
 );
